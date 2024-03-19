@@ -469,6 +469,7 @@ scale = Vector2(3, 2.7)
 texture = ExtResource("2_dk5qn")
 
 [node name="Player" type="Node2D" parent="."]
+position = Vector2(88, 24)
 
 [node name="Player" parent="Player" instance=ExtResource("1_wkckd")]
 position = Vector2(16, -32)
@@ -508,7 +509,7 @@ script = SubResource("GDScript_gm8vn")
 [node name="Gold" type="Label" parent="UI"]
 offset_left = 8.0
 offset_top = 40.0
-offset_right = 48.0
+offset_right = 62.0
 offset_bottom = 77.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24

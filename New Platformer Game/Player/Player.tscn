@@ -1,40 +1,68 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8vn4jjs2dg0u"]
+[gd_scene load_steps=34 format=3 uid="uid://c8vn4jjs2dg0u"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_m3tp6"]
-[ext_resource type="Texture2D" uid="uid://cig0u3xogo10h" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-1.png" id="1_neih5"]
-[ext_resource type="Texture2D" uid="uid://dkk0ghojesq80" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/player-hurt.png" id="1_wuvcd"]
-[ext_resource type="Texture2D" uid="uid://btdvb1b5bbpnr" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-2.png" id="2_hgyrf"]
-[ext_resource type="Texture2D" uid="uid://dnqdo4gkdmyte" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-3.png" id="3_w8kvc"]
-[ext_resource type="Texture2D" uid="uid://ce3li46886m1a" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-4.png" id="4_fx1q8"]
-[ext_resource type="Texture2D" uid="uid://qmpx1ixk5rf1" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-1.png" id="5_8ttsh"]
-[ext_resource type="Texture2D" uid="uid://d21lbqfrjjl2e" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-2.png" id="6_ji3q0"]
-[ext_resource type="Texture2D" uid="uid://t8l4la3kkean" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-1.png" id="7_8y80i"]
-[ext_resource type="Texture2D" uid="uid://bub21s8jlncpm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-2.png" id="8_oj4o2"]
-[ext_resource type="Texture2D" uid="uid://dp6r1f8407x3c" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-3.png" id="9_8okor"]
-[ext_resource type="Texture2D" uid="uid://b0bdxn2mtmtrr" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-4.png" id="10_mvwid"]
-[ext_resource type="Texture2D" uid="uid://b7wk2cvk8l5wo" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-5.png" id="11_iotgn"]
-[ext_resource type="Texture2D" uid="uid://cxr6jlu0neavp" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-6.png" id="12_raqbq"]
+[ext_resource type="Texture2D" uid="uid://cwns684ep4b38" path="res://Assets/Samurai/attack_0.png" id="2_k0v0l"]
+[ext_resource type="Texture2D" uid="uid://yfutjasmkeuq" path="res://Assets/Samurai/attack_1.png" id="3_up3uf"]
+[ext_resource type="Texture2D" uid="uid://cjk14jxsy6rmu" path="res://Assets/Samurai/attack_2.png" id="4_30e55"]
+[ext_resource type="Texture2D" uid="uid://dbksg22lvrg8k" path="res://Assets/Samurai/attack_3.png" id="5_sm1tt"]
+[ext_resource type="Texture2D" uid="uid://cacpi47nkqdx1" path="res://Assets/Samurai/attack_4.png" id="6_wcbgp"]
+[ext_resource type="Texture2D" uid="uid://dj1ce8o87wrgr" path="res://Assets/Samurai/attack_5.png" id="7_bbqq3"]
+[ext_resource type="Texture2D" uid="uid://cp6kpj4hmyhxg" path="res://Assets/Samurai/attack_6.png" id="8_qsxmq"]
+[ext_resource type="Texture2D" uid="uid://drb01nv8qlxa5" path="res://Assets/Samurai/attack_7.png" id="9_efa3i"]
+[ext_resource type="Texture2D" uid="uid://cvokabuvryja4" path="res://Assets/Samurai/x_1.png" id="10_xs5u8"]
+[ext_resource type="Texture2D" uid="uid://c1dopkhfeu643" path="res://Assets/Samurai/idle_0.png" id="11_d1scu"]
+[ext_resource type="Texture2D" uid="uid://dw1m4n7pej177" path="res://Assets/Samurai/idle_1.png" id="12_kqupn"]
+[ext_resource type="Texture2D" uid="uid://dw8sia674gcgf" path="res://Assets/Samurai/idle_2.png" id="13_ejjeg"]
+[ext_resource type="Texture2D" uid="uid://b7rmb0ikfb4y1" path="res://Assets/Samurai/idle_3.png" id="14_kgikp"]
+[ext_resource type="Texture2D" uid="uid://cyb0eir8qpq7l" path="res://Assets/Samurai/jump_0.png" id="15_bkeqs"]
+[ext_resource type="Texture2D" uid="uid://onampfchwxh1" path="res://Assets/Samurai/jump_1.png" id="16_nny64"]
+[ext_resource type="Texture2D" uid="uid://f080mmk0ik67" path="res://Assets/Samurai/jump_2.png" id="17_bwnpg"]
+[ext_resource type="Texture2D" uid="uid://dq6tf4hgnuhhg" path="res://Assets/Samurai/jump_3.png" id="18_1dswx"]
+[ext_resource type="Texture2D" uid="uid://unvcvwi8wibt" path="res://Assets/Samurai/run_0.png" id="19_23eqi"]
+[ext_resource type="Texture2D" uid="uid://5e7n4f3fobpd" path="res://Assets/Samurai/run_1.png" id="20_q5t1c"]
+[ext_resource type="Texture2D" uid="uid://bdj6alp4a7qyy" path="res://Assets/Samurai/run_2.png" id="21_1ldtu"]
+[ext_resource type="Texture2D" uid="uid://bmd0f7r3l8ka" path="res://Assets/Samurai/run_3.png" id="22_oyfss"]
+[ext_resource type="Texture2D" uid="uid://pshhu2py1hbs" path="res://Assets/Samurai/run_4.png" id="23_hdtjo"]
+[ext_resource type="Texture2D" uid="uid://ds45xbcacgbfp" path="res://Assets/Samurai/run_5.png" id="24_be7jo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eawrj"]
 radius = 6.0
 height = 20.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jy7tx"]
-atlas = ExtResource("1_wuvcd")
-region = Rect2(0, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0t75l"]
-atlas = ExtResource("1_wuvcd")
-region = Rect2(33, 0, 33, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ltfp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jy7tx")
+"texture": ExtResource("2_k0v0l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0t75l")
+"texture": ExtResource("3_up3uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30e55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sm1tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wcbgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bbqq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qsxmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_efa3i")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xs5u8")
 }],
 "loop": true,
 "name": &"Death",
@@ -42,16 +70,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_neih5")
+"texture": ExtResource("11_d1scu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hgyrf")
+"texture": ExtResource("12_kqupn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_w8kvc")
+"texture": ExtResource("13_ejjeg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fx1q8")
+"texture": ExtResource("14_kgikp")
 }],
 "loop": true,
 "name": &"Idle",
@@ -59,10 +87,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8ttsh")
+"texture": ExtResource("15_bkeqs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ji3q0")
+"texture": ExtResource("16_nny64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bwnpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1dswx")
 }],
 "loop": true,
 "name": &"Jump",
@@ -70,22 +104,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_8y80i")
+"texture": ExtResource("19_23eqi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_oj4o2")
+"texture": ExtResource("20_q5t1c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_8okor")
+"texture": ExtResource("21_1ldtu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_mvwid")
+"texture": ExtResource("22_oyfss")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_iotgn")
+"texture": ExtResource("23_hdtjo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_raqbq")
+"texture": ExtResource("24_be7jo")
 }],
 "loop": true,
 "name": &"Run",
@@ -234,6 +268,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(0, 6)
 script = ExtResource("1_m3tp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -241,12 +276,12 @@ position = Vector2(1, -9)
 shape = SubResource("CapsuleShape2D_eawrj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-6, -13)
+scale = Vector2(0.5375, 0.637931)
 sprite_frames = SubResource("SpriteFrames_3ltfp")
-animation = &"Idle"
+animation = &"Attack"
 frame = 1
 flip_h = true
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.6, 1.6)
