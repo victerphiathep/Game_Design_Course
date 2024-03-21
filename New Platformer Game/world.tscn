@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=12 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_al0a7"]
 [ext_resource type="Script" path="res://BG.gd" id="1_aoctp"]
 [ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="1_wkckd"]
 [ext_resource type="Texture2D" uid="uid://cb5suyu343d1n" path="res://sunny-land-phaser-project/sunny-land/assets/environment/back.png" id="2_dk5qn"]
 [ext_resource type="PackedScene" uid="uid://4io1vg8e1cwi" path="res://Frog.tscn" id="5_dlbs7"]
+[ext_resource type="Script" path="res://HealthBar.gd" id="6_s5nrc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_al0a7")
@@ -452,6 +453,9 @@ func _on_timer_timeout():
 
 [node name="World" type="Node2D"]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(56, 304)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_t504d")
 format = 2
@@ -472,7 +476,7 @@ texture = ExtResource("2_dk5qn")
 position = Vector2(88, 24)
 
 [node name="Player" parent="Player" instance=ExtResource("1_wkckd")]
-position = Vector2(16, -32)
+position = Vector2(-32, 280)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -515,6 +519,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Gold"
 script = SubResource("GDScript_5m36j")
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 27.0
+grow_horizontal = 0
+max_value = 10.0
+step = 1.0
+value = 10.0
+script = ExtResource("6_s5nrc")
 
 [node name="Collectables" type="Node2D" parent="."]
 script = SubResource("GDScript_woffd")

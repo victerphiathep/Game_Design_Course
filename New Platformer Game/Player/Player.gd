@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+signal healthChanged 
+
+@export var currentHealth = 10 # current Health
+@export var maxHealth = 10 # max Health
+@export var Gold = 0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -41,3 +48,13 @@ func _physics_process(delta):
 	if Game.playerHP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
+		
+
+func hurtByEnemy(area):
+	currentHealth -= 10
+	if currentHealth < 0:
+		currentHealth = maxHealth
+		
+	healthChanged.emit()
+	
+	
