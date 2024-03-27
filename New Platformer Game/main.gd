@@ -4,8 +4,8 @@ extends Node2D
 
 
 func _ready():
-	#Utils.saveGame()
-	#Utils.loadGame()
+	Utils.saveGame()
+	Utils.loadGame()
 	pass
 	
 func _on_quit_pressed():

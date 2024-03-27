@@ -1,6 +1,14 @@
 extends Node
 
+signal healthChanged
 
-var playerHP = 10 # current Health
-var maxHealth = 10 # max Health
+var currentHealth = 10
+var maxHealth = 10
 var Gold = 0
+
+func hurtByEnemy(area):
+	Game.currentHealth -= 2
+	healthChanged.emit()
+	if Game.currentHealth < 0:
+		Game.currentHealth = Game.maxHealth
+	

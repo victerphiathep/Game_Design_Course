@@ -46,7 +46,7 @@ func _on_player_death_body_entered(body):
 		death()
 func _on_player_collison_body_entered(body):
 	if body.name == "Player":
-		healthChanged.emit()
+		Game.hurtByEnemy(body)  # Call the function with parentheses
 		death()
 func death():
 	player.Gold += 5
