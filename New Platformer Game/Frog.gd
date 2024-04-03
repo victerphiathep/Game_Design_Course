@@ -6,52 +6,64 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 
 @export var player: Player
+var hp = 4
 
 signal healthChanged 
-
+signal frog_defeated # Signal frog to be beat
 
 func _ready():
-	get_node("AnimatedSprite2D").play("Idle")
+    get_node("AnimatedSprite2D").play("Idle")
+    
 func _physics_process(delta):
-	#Gravity for Frog
-	velocity.y += gravity * delta
-	if chase == true:
-		if get_node("AnimatedSprite2D").animation != "Death":
-			get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../../Player/Player")
-		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
-		else:
-			get_node("AnimatedSprite2D").flip_h = false
-		velocity.x = direction.x * SPEED
-	else:
-		if get_node("AnimatedSprite2D").animation != "Death":
-			get_node("AnimatedSprite2D").play("Idle")
-		velocity.x = 0
-	move_and_slide()
-	
+    velocity.y += gravity * delta
+    if chase:
+        pursue_player(delta)
+    else:
+        velocity.x = 0
+        if get_node("AnimatedSprite2D").animation != "Death":
+            get_node("AnimatedSprite2D").play("Idle")
+    
+    move_and_slide()
+
+func pursue_player(delta):
+    if get_node("AnimatedSprite2D").animation != "Death":
+        get_node("AnimatedSprite2D").play("Jump")
+    player = get_node("../../Player/Player")
+    var direction = (player.position - self.position).normalized()
+    get_node("AnimatedSprite2D").flip_h = direction.x > 0
+    velocity.x = direction.x * SPEED
+    
+func apply_damage(damage_amount):
+    hp -= damage_amount
+    emit_signal("healthChanged", hp)
+    if hp <= 0:
+        death()
+    
 func _on_player_detection_body_entered(body):
-	if body.name == "Player":
-		chase = true
+    if body.name == "Player":
+        chase = true
 
 
 func _on_player_detection_body_exited(body):
-	if body.name == "Player":
-		chase = false
+    if body.name == "Player":
+        chase = false
 
 
 func _on_player_death_body_entered(body):
-	if body.name == "Player":
-		death()
+    if body.name == "Player":
+        death()
 func _on_player_collison_body_entered(body):
-	if body.name == "Player":
-		Game.hurtByEnemy(body)  # Call the function with parentheses
-		death()
+    if body.name == "Player":
+        Game.hurtByEnemy(body)  # Call the function with parentheses
+        death()
 func death():
-	player.Gold += 5
-	#Utils.saveGame()
-	chase = false
-	get_node("AnimatedSprite2D").play("Death")
-	await get_node("AnimatedSprite2D").animation_finished
-	self.queue_free()
+    chase = false
+    get_node("AnimatedSprite2D").play("Death")
+    emit_signal("frog_defeated")  # Optional, if you want to notify other parts of your game
+    await get_node("AnimatedSprite2D").animation_finished
+    self.queue_free()
+
+func _on_SwordHitbox_area_entered(area):
+    if area.is_in_group("sword"):
+        print("Frog hit")  # Assuming you have a group 'sword' for the sword's hitbox
+        apply_damage(2)  # Apply damage of 2

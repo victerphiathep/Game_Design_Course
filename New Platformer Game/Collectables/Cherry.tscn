@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://key66gxt5vle"]
+[gd_scene load_steps=12 format=3 uid="uid://key66gxt5vle"]
 
 [ext_resource type="Texture2D" uid="uid://b62g1anf42d6r" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/cherry/cherry-1.png" id="1_aqj6f"]
 [ext_resource type="Texture2D" uid="uid://bxck78rvjv6vj" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/cherry/cherry-2.png" id="2_i8c2c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4r83aknvuhsm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/cherry/cherry-5.png" id="5_qjmc7"]
 [ext_resource type="Texture2D" uid="uid://bparnwmuqpoap" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/cherry/cherry-6.png" id="6_6ngj8"]
 [ext_resource type="Texture2D" uid="uid://bud2cpiiceygm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/cherry/cherry-7.png" id="7_exjdx"]
+[ext_resource type="AudioStream" uid="uid://bxq0j2mx3iknp" path="res://Assets/Loot/Menu FX example/Item1A.wav" id="8_gdo6u"]
 
 [sub_resource type="GDScript" id="GDScript_u1ajf"]
 script/source = "extends Area2D
@@ -15,16 +16,17 @@ script/source = "extends Area2D
 
 
 func _on_body_entered(body):
-	if body.name == \"Player\":
-		Game.Gold += 5
-		var tween = get_tree().create_tween()
-		var tween1 = get_tree().create_tween()
-		tween.tween_property(self, \"position\", position - Vector2(0,35), 0.35)
-		tween1.tween_property(self, \"modulate:a\", 0, 0.3)
-		
-		tween.tween_callback(queue_free)
-		
-		
+    if body.name == \"Player\":
+        
+        Game.Gold += 5
+        var tween = get_tree().create_tween()
+        var tween1 = get_tree().create_tween()
+        tween.tween_property(self, \"position\", position - Vector2(0,35), 0.35)
+        tween1.tween_property(self, \"modulate:a\", 0, 0.3)
+        
+        tween.tween_callback(queue_free)
+        $PickedUp.play()
+        
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_haxsw"]
@@ -70,6 +72,8 @@ shape = SubResource("CircleShape2D_haxsw")
 sprite_frames = SubResource("SpriteFrames_0cr04")
 animation = &"Idle"
 autoplay = "Idle"
-metadata/_edit_lock_ = true
+
+[node name="PickedUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gdo6u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
