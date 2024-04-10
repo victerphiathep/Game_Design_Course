@@ -1,6 +1,6 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
-class_name Player
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @export var Gold = 0
@@ -102,3 +102,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_animated_sprite_2d_animation_finished(anim_name):
     pass
+
+
+func _on_area_2d_body_entered(body):
+    pass # Replace with function body.

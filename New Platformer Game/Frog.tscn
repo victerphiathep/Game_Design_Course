@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://4io1vg8e1cwi"]
 
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
+[ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
+[ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
 [ext_resource type="Script" path="res://Frog.gd" id="1_h1wq8"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-jump.png" id="2_ux3b5"]
+[ext_resource type="Texture2D" uid="uid://0vxg673nr403" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-jump.png" id="2_ux3b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r6w0"]
 size = Vector2(21, 11)

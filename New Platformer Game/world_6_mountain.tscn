@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://daoritbro5put"]
+[gd_scene load_steps=2 format=3 uid="uid://daoritbro5put"]
+
+[ext_resource type="Texture2D" uid="uid://di2foh8hfxrq2" path="res://Assets/Mountains/Glacial-mountains-parallax-background_vnitti/background_glacial_mountains_lightened.png" id="1_ygjp3"]
 
 [node name="World_6_Mountain" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="BackgroundGlacialMountainsLightened" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 322)
+scale = Vector2(3, 3.01852)
+texture = ExtResource("1_ygjp3")

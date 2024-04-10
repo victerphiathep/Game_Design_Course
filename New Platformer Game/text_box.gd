@@ -1,33 +1,22 @@
 extends CanvasLayer
 
-onready var textbox_container = $Textbox Container
-onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
-onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
-onready var label = $TextboxContainer/MarginContainer/HboxContainer/Label3
+# Assuming the dialogue Panel is named "DialoguePanel"
+@onready var dialogue_panel = $TextboxContainer/DialoguePanel
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-    hide_textbox() # Replace with function body.
-    add_text("This text is going to be added")
+    # Initially hide the dialogue panel
+    dialogue_panel.visible = false
+    # Call the function to show dialogue when the game starts
+    show_dialogue("Where am I..?", 5.0)  # Display the text for 5 seconds
 
+func show_dialogue(text: String, duration: float):
+    dialogue_panel.get_node("Label").text = text  # Update the Label text
+    dialogue_panel.visible = true  # Make the dialogue panel visible
+    # Optionally hide the dialogue after a duration
+    await get_tree().create_timer(duration).timeout
+    dialogue_panel.visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func hide_textbox():
-    start_symbol.text = ""
-    end_symbol.text = ""
-    label.text = ""
-    
-func show_textbox():
-    start_symbol.text =  "*"
-    textbox_container.show()
-
-func add_text(next_text):
-    label.text = next_text
-    show_textbox()
-    var tween = get_tree().create_tween()
-    tween.tween_property(label, "visible_characters", [244], len(next_text) * CHAR_READ_RATE).from(0).finished
-    tween.connect("finished", on_tween_finished)
-    
-    
-func on_tween_finished():
-    end_symbol.text = "<-"
+func _input(event):
+    # Hide the dialogue if any key is pressed
+    if event is InputEventKey and event.pressed:
+        dialogue_panel.visible = false
