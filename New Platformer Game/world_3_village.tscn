@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cb168x33s0lwe"]
+[gd_scene load_steps=37 format=3 uid="uid://cb168x33s0lwe"]
 
 [ext_resource type="Texture2D" uid="uid://cfcjwyc242gn" path="res://Assets/Village/oak_woods_v1.0/background/background_layer_1.png" id="1_d2vwg"]
 [ext_resource type="Texture2D" uid="uid://v7uxeajax4ot" path="res://Assets/Village/pixel_village/TX Village Props.png" id="1_u2slt"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="14_kkeok"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="15_yxs4h"]
 [ext_resource type="Script" path="res://Portal.gd" id="16_p7yd6"]
+[ext_resource type="AudioStream" uid="uid://dy71bf5qapm2e" path="res://Music by Pascal Belisle/Music by Pascal Belisle/platformer_level03.mp3" id="20_w8dvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwa6"]
 texture = ExtResource("1_u2slt")
@@ -7435,5 +7436,9 @@ position = Vector2(256, 552)
 [node name="Area2D" parent="." instance=ExtResource("15_yxs4h")]
 position = Vector2(32, 528)
 script = ExtResource("16_p7yd6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_w8dvq")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

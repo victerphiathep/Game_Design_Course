@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=59 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -34,6 +34,7 @@
 [ext_resource type="Script" path="res://Portal_Dungeon.gd" id="32_32nxb"]
 [ext_resource type="Script" path="res://Portal_River.gd" id="33_wjwqv"]
 [ext_resource type="PackedScene" uid="uid://blmvmchef0kr7" path="res://text_box.tscn" id="34_7388m"]
+[ext_resource type="Script" path="res://Portal_Village.gd" id="35_p3ntv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -5932,6 +5933,8 @@ func _on_timer_timeout():
 	get_node(\"Node2D\").add_child(cherryTemp)
 "
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnpj2"]
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(0, 368)
@@ -5945,11 +5948,11 @@ script = ExtResource("1_2tv7c")
 position = Vector2(768, -424)
 shape = SubResource("CapsuleShape2D_1wasa")
 
-[node name="NextLevel2" type="Area2D" parent="."]
+[node name="NextLevel_Forest" type="Area2D" parent="."]
 position = Vector2(1744, 296)
 script = ExtResource("2_oeysv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel_Forest"]
 position = Vector2(1640, 0)
 shape = SubResource("CapsuleShape2D_1wasa")
 
@@ -6119,10 +6122,19 @@ position = Vector2(3368, 280)
 
 [node name="TextBox" parent="." instance=ExtResource("34_7388m")]
 
+[node name="Portal_Village" parent="." instance=ExtResource("27_cv8w7")]
+position = Vector2(1608, 280)
+script = ExtResource("35_p3ntv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Portal_Village"]
+position = Vector2(16, 16)
+shape = SubResource("CapsuleShape2D_lnpj2")
+
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
-[connection signal="body_entered" from="NextLevel2" to="NextLevel2" method="_on_body_entered"]
+[connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]
 [connection signal="closed" from="UI/InventoryGui" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="UI/InventoryGui" to="." method="_on_inventory_gui_opened"]
 [connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Portal_Dungeon" to="NextLevel" method="_on_portal_dungeon_body_entered"]
 [connection signal="body_entered" from="Portal_River" to="Portal_River" method="_on_body_entered"]
+[connection signal="body_entered" from="Portal_Village" to="Portal_Village" method="_on_body_entered"]

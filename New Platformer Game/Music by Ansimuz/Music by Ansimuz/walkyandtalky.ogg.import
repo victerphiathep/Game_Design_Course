@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/walkyandtalky.ogg-eebce3e6c1247acee96573feb54
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
