@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=60 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="35_0an4w"]
 [ext_resource type="Script" path="res://First_Checkpoint.gd" id="36_om6mv"]
 [ext_resource type="PackedScene" uid="uid://ckbyfdnxaoeb5" path="res://pit_fall.tscn" id="37_f6m2w"]
+[ext_resource type="PackedScene" uid="uid://blwmjih6xsai6" path="res://pause_menu.tscn" id="37_fxmae"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -5939,6 +5940,8 @@ y_sort_enabled = true
 position = Vector2(0, 368)
 script = ExtResource("1_33yey")
 
+[node name="PauseMenu" parent="." instance=ExtResource("37_fxmae")]
+
 [node name="NextLevel" type="Area2D" parent="."]
 position = Vector2(1720, 296)
 script = ExtResource("1_2tv7c")
@@ -5999,10 +6002,10 @@ scale = Vector2(3, 4.21667)
 texture = ExtResource("2_dk5qn")
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(88, 24)
+position = Vector2(2058, 297)
 
 [node name="Player" parent="Player" instance=ExtResource("1_wkckd")]
-position = Vector2(459, 832)
+position = Vector2(1951, 265)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Player"]
 

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://blwmjih6xsai6"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_5435m"]
+[ext_resource type="FontFile" uid="uid://dkia1bq5raell" path="res://monogram/ttf/monogram.ttf" id="1_bkb8w"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5435m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 46.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bkb8w")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bkb8w")
+text = "Quit"

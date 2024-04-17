@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b38r3cljuu5x4"]
+[gd_scene load_steps=12 format=3 uid="uid://b38r3cljuu5x4"]
 
 [ext_resource type="Script" path="res://Portal.gd" id="1_5ny0l"]
 [ext_resource type="Texture2D" uid="uid://c65uvwru4odco" path="res://Assets/Dimensional_Portal.png" id="1_c56a8"]
+[ext_resource type="AudioStream" uid="uid://bmdumci2goc2b" path="res://Assets/scifi-anime-whoosh-7-183348.mp3" id="3_53vdy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cx2v"]
 
@@ -72,3 +73,6 @@ position = Vector2(14.5, 16)
 scale = Vector2(1.59375, 1)
 sprite_frames = SubResource("SpriteFrames_ed5a0")
 animation = &"Idle"
+
+[node name="Portal_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_53vdy")
