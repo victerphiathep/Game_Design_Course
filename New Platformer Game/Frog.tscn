@@ -160,7 +160,6 @@ sprite_frames = SubResource("SpriteFrames_tj84u")
 animation = &"Idle"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_0pjvl")

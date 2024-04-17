@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=58 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -34,6 +34,7 @@
 [ext_resource type="Script" path="res://Portal_Dungeon.gd" id="32_32nxb"]
 [ext_resource type="Script" path="res://Portal_River.gd" id="33_wjwqv"]
 [ext_resource type="PackedScene" uid="uid://blmvmchef0kr7" path="res://text_box.tscn" id="34_7388m"]
+[ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="35_0an4w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -6118,6 +6119,9 @@ script = ExtResource("33_wjwqv")
 position = Vector2(3368, 280)
 
 [node name="TextBox" parent="." instance=ExtResource("34_7388m")]
+
+[node name="Checkpoint" parent="." instance=ExtResource("35_0an4w")]
+position = Vector2(1999, 293)
 
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
 [connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]
