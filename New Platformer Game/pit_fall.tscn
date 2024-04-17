@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckbyfdnxaoeb5"]
+
+[ext_resource type="Script" path="res://Pit_Fall.gd" id="1_ctxky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scnin"]
+size = Vector2(67, 20)
+
+[node name="Pit_Fall" type="Area2D"]
+script = ExtResource("1_ctxky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23.5, 0)
+shape = SubResource("RectangleShape2D_scnin")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

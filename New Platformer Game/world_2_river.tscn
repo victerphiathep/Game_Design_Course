@@ -1269,7 +1269,7 @@ frame_progress = 0.394101
 position = Vector2(2080, 432)
 script = ExtResource("6_hp1oe")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kcdgw")
 autoplay = true
 

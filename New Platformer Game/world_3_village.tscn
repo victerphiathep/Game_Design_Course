@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://bimjpni5joy50" path="res://Assets/Village/oak_woods_v1.0/background/background_layer_3.png" id="13_baswt"]
 [ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="14_kkeok"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="15_yxs4h"]
+[ext_resource type="AudioStream" uid="uid://bkhna1v5gwrrs" path="res://Music by Pascal Belisle/Music by Pascal Belisle/platformer_level03_loop.ogg" id="20_kx3jn"]
 [ext_resource type="Script" path="res://Portal_Forest.gd" id="20_u5dit"]
-[ext_resource type="AudioStream" uid="uid://dy71bf5qapm2e" path="res://Music by Pascal Belisle/Music by Pascal Belisle/platformer_level03.mp3" id="20_w8dvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbm3t"]
 texture = ExtResource("5_iwtsd")
@@ -8381,8 +8381,8 @@ position = Vector2(32, 528)
 position = Vector2(2803, 527)
 script = ExtResource("20_u5dit")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_w8dvq")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_kx3jn")
 autoplay = true
 
 [connection signal="body_entered" from="Portal_River" to="Portal_River" method="_on_body_entered"]

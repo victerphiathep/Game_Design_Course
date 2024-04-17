@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://6lojx6wm20ox"]
+
+[ext_resource type="Texture2D" uid="uid://cn7hrh3o5qe4d" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_e7niu"]
+[ext_resource type="FontFile" uid="uid://dkia1bq5raell" path="res://monogram/ttf/monogram.ttf" id="2_4uilw"]
+[ext_resource type="AudioStream" uid="uid://ctofythrjfcl2" path="res://Assets/Game_Over_2.wav" id="3_yh3u5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2bqt"]
+font = ExtResource("2_4uilw")
+font_size = 200
+font_color = Color(1, 1, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vnm42"]
+font = ExtResource("2_4uilw")
+font_size = 50
+font_color = Color(0.992157, 0.960784, 0.956863, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(579, 330.5)
+scale = Vector2(3.01042, 2.75417)
+texture = ExtResource("1_e7niu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 126.0
+offset_right = 1156.0
+offset_bottom = 490.0
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_c2bqt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 299.0
+offset_right = 1151.0
+offset_bottom = 663.0
+text = "Thanks for playing the Alpha build of Eldritch Fields"
+label_settings = SubResource("LabelSettings_vnm42")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yh3u5")
+autoplay = true

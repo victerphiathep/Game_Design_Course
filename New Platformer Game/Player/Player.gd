@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 enum States { IDLE, RUNNING, JUMPING, FALLING, ATTACKING }
 var current_state = States.IDLE
+var checkpoint_position: Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
@@ -17,7 +18,8 @@ func _ready():
 		print("Signal connected successfully.")
 	else:
 		print("Failed to connect signal: ", error)
-		
+	checkpoint_position = global_position # Initialize with starting position
+
 func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 
@@ -45,8 +47,12 @@ func _physics_process(delta):
 	handle_attack()
 
 	if Game.currentHealth <= 0:
-		queue_free()
-		get_tree().change_scene_to_file("res://main.tscn")
+		# Respawn if health is zero
+		respawn()
+		
+		# Change scene if health zero below
+		#queue_free()
+		#get_tree().change_scene_to_file("res://main.tscn")
 
 func handle_attack():
 		if Input.is_action_just_pressed("ui_accept") and current_state != States.ATTACKING:
@@ -97,9 +103,17 @@ func _on_animation_player_animation_finished(anim_name):
 		$Jump_Land.play()
 	
 	
+func set_checkpoint(position: Vector2):
+	checkpoint_position = position # Update checkpoint position
+
+func respawn():
+	var respawn_pos = CheckpointManager.get_current_checkpoint()
+	global_position = respawn_pos
+	Game.currentHealth = 4  # Reset health
+	current_state = States.IDLE  # Set state to IDLE or a safe default state
+	anim.play("Idle")  # Ensure the player is set to an idle animation
+	print("Respawned at checkpoint.")
 	
-
-
 func _on_animated_sprite_2d_animation_finished(anim_name):
 	pass
 
