@@ -1,15 +1,33 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+    visible = false
+    $AnimationPlayer.play("RESET")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func resume():
+    get_tree().paused = false
+    visible = false
+    $AnimationPlayer.play_backwards("blur")
+    
+func pause():
+    get_tree().paused = true
+    visible = true
+    $AnimationPlayer.play_backwards()
+
+func testEsc():
+    if Input.is_action_just_pressed("pause"):
+        if get_tree().paused:
+            resume()
+        else:
+            pause()
+
+func _on_resume_pressed():
+    resume()
+
+
+func _on_quit_pressed():
+    get_tree().quit()
+
 func _process(delta):
-	pass
-	
-
-
-	
+    testEsc()

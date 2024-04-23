@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://covar11igmvop"]
+[gd_scene load_steps=13 format=3 uid="uid://covar11igmvop"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_i4q8k"]
 [ext_resource type="Texture2D" uid="uid://cr0aj7bm4ca37" path="res://Assets/Traps/ItemTraps/CheckPoint.png" id="2_7wwab"]
+[ext_resource type="AudioStream" uid="uid://bptjqug7nj30c" path="res://Assets/Loot/Menu FX example/Item1B.wav" id="3_v61rl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqfht"]
 radius = 7.0
@@ -79,5 +80,8 @@ shape = SubResource("CapsuleShape2D_fqfht")
 [node name="Checkpoint_Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5u34s")
 animation = &"Checkpoint"
+
+[node name="PickedUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v61rl")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
