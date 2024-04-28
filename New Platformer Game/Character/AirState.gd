@@ -3,7 +3,7 @@ extends State
 class_name AirState
 
 @export var landing_state : State
-@export var double_jump_velocity : float = -100
+@export var double_jump_velocity : float = -400
 @export var double_jump_animation : String = "double_jump"
 @export var landing_animation : String = "landing"
 

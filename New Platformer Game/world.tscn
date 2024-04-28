@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=92 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -40,7 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://tny4p603u0lw" path="res://inventory_gui.tscn" id="23_h6fec"]
 [ext_resource type="PackedScene" uid="uid://key66gxt5vle" path="res://Collectables/Cherry.tscn" id="24_krsrg"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="27_cv8w7"]
-[ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="30_rvi5u"]
 [ext_resource type="Script" path="res://Portal_River.gd" id="33_wjwqv"]
 [ext_resource type="PackedScene" uid="uid://blmvmchef0kr7" path="res://text_box.tscn" id="34_7388m"]
 [ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="35_0an4w"]
@@ -25562,9 +25561,6 @@ position = Vector2(1823, 284)
 
 [node name="Player2" parent="Player" groups=["Player"] instance=ExtResource("48_b4rdt")]
 position = Vector2(2, -1)
-
-[node name="Player_3" parent="Player" instance=ExtResource("30_rvi5u")]
-position = Vector2(-155, 14)
 
 [node name="Mobs" type="Node2D" parent="."]
 

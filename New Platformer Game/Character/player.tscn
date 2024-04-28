@@ -420,7 +420,7 @@ states/jump_start/position = Vector2(392, -6)
 states/move/node = SubResource("AnimationNodeBlendSpace1D_bjy5n")
 states/move/position = Vector2(392, 100)
 transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_i4ph4"), "move", "jump_start", SubResource("AnimationNodeStateMachineTransition_2puwh"), "jump_start", "jump_end", SubResource("AnimationNodeStateMachineTransition_50dqq"), "jump_end", "move", SubResource("AnimationNodeStateMachineTransition_3ny4h"), "jump_start", "double_jump", SubResource("AnimationNodeStateMachineTransition_kd0lq"), "double_jump", "jump_end", SubResource("AnimationNodeStateMachineTransition_8aae2"), "move", "attack1", SubResource("AnimationNodeStateMachineTransition_h87gc"), "attack1", "attack2", SubResource("AnimationNodeStateMachineTransition_bv6f2"), "attack1", "move", SubResource("AnimationNodeStateMachineTransition_lwll5"), "attack2", "move", SubResource("AnimationNodeStateMachineTransition_llh3u")]
-graph_offset = Vector2(3, -54)
+graph_offset = Vector2(10, -36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bxls"]
 size = Vector2(27.5, 49)
@@ -434,8 +434,8 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ry2ya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_uohqy")
-hframes = 4
+texture = ExtResource("5_fhfe2")
+hframes = 15
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -449,6 +449,13 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_haosr")
 anim_player = NodePath("../AnimationPlayer")
 parameters/move/blend_position = 0.0247229
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+zoom = Vector2(1.6, 1.6)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
 
 [node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "animation_tree", "current_state")]
 script = ExtResource("7_utua3")
