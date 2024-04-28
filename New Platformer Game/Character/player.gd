@@ -10,7 +10,8 @@ class_name Player
 # Also flips sprite direction when moving right or left and 
 # emits signal to let other scripts know what direction the player is facing
 
-@export var speed : float = 200.0
+@export var speed : float = 250.0
+@export var Gold = 0
 
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var animation_tree : AnimationTree = $AnimationTree
@@ -19,6 +20,7 @@ class_name Player
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction : Vector2 = Vector2.ZERO
+var checkpoint_position: Vector2
 
 signal facing_direction_changed(facing_right : bool)
 
@@ -39,6 +41,10 @@ func _physics_process(delta):
 		velocity.x = direction.x * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		
+	if Game.currentHealth <= 0:
+		# Respawn if health is zero
+		respawn()
 
 	move_and_slide()
 	update_animation_parameters()
@@ -54,3 +60,12 @@ func update_facing_direction():
 		sprite.flip_h = true
 	
 	emit_signal("facing_direction_changed", !sprite.flip_h)
+
+func set_checkpoint(position: Vector2):
+	checkpoint_position = position # Update checkpoint position
+
+func respawn():
+	var respawn_pos = CheckpointManager.get_current_checkpoint()
+	global_position = respawn_pos
+	Game.currentHealth = 4  # Reset health
+	print("Respawned at checkpoint.")

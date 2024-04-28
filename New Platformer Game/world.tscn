@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=93 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://tny4p603u0lw" path="res://inventory_gui.tscn" id="23_h6fec"]
 [ext_resource type="PackedScene" uid="uid://key66gxt5vle" path="res://Collectables/Cherry.tscn" id="24_krsrg"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="27_cv8w7"]
+[ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="30_rvi5u"]
 [ext_resource type="Script" path="res://Portal_River.gd" id="33_wjwqv"]
 [ext_resource type="PackedScene" uid="uid://blmvmchef0kr7" path="res://text_box.tscn" id="34_7388m"]
 [ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="35_0an4w"]
@@ -47,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://ckbyfdnxaoeb5" path="res://pit_fall.tscn" id="37_f6m2w"]
 [ext_resource type="PackedScene" uid="uid://blwmjih6xsai6" path="res://pause_menu.tscn" id="37_fxmae"]
 [ext_resource type="Texture2D" uid="uid://yqbg7lvkhj5c" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="39_4rkvw"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="48_b4rdt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -25556,7 +25558,13 @@ format = 2
 layer_0/tile_data = PackedInt32Array(983151, 131072, 0, 983153, 131072, 0, 1179759, 131072, 0, 1179760, 131072, 0, 1179761, 131072, 0, 1179762, 131072, 0, 1179763, 131072, 0, 1179764, 131072, 0, -262054, 0, 0, -262053, 65536, 0, -262052, 65536, 0, -262051, 65536, 0, -262050, 65536, 0, -262044, 65536, 0, -262043, 65536, 0, -262042, 65536, 0, -262049, 65536, 0, -262048, 65536, 0, -262047, 65536, 0, -262046, 65536, 0, -262045, 65536, 0, -524172, 983040, 15, -655230, 1310720, 15, -589694, 1310720, 16)
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(2056, 292)
+position = Vector2(1823, 284)
+
+[node name="Player2" parent="Player" groups=["Player"] instance=ExtResource("48_b4rdt")]
+position = Vector2(2, -1)
+
+[node name="Player_3" parent="Player" instance=ExtResource("30_rvi5u")]
+position = Vector2(-155, 14)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -25680,6 +25688,7 @@ position = Vector2(2821, 397)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 visible = false
+scroll_offset = Vector2(-1812.29, -553.165)
 script = ExtResource("1_aoctp")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]

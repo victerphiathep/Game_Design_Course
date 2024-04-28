@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://1he3u0kyx2xg"]
+[gd_scene load_steps=38 format=3 uid="uid://1he3u0kyx2xg"]
 
 [ext_resource type="Texture2D" uid="uid://blsip3vnjiv55" path="res://Assets/Tiles/Assets/Assets.png" id="1_7hkrc"]
 [ext_resource type="Texture2D" uid="uid://bx8mt60kslw5v" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_f1gx7"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://lqu46o77mska" path="res://Music by Ansimuz/Music by Ansimuz/summer nights.ogg" id="6_kcdgw"]
 [ext_resource type="Texture2D" uid="uid://c1xd24x2w6puc" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="7_1m3m0"]
 [ext_resource type="Texture2D" uid="uid://cqs36nsf4thbv" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Yellow-Tree.png" id="7_judk0"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="17_sajml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vb4nj"]
 texture = ExtResource("3_lws7f")
@@ -23038,6 +23039,9 @@ texture = ExtResource("3_ks0qw")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kcdgw")
 autoplay = true
+
+[node name="Player" parent="." instance=ExtResource("17_sajml")]
+position = Vector2(10, 118)
 
 [connection signal="body_entered" from="Portal_Level_1" to="Portal_Level_1" method="_on_body_entered"]
 [connection signal="body_entered" from="Portal_Village" to="Portal_Village" method="_on_body_entered"]

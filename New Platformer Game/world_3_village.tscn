@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://b14kn5dt08p56" path="res://Assets/Village/oak_woods_v1.0/decorations/fence_1.png" id="10_sg84y"]
 [ext_resource type="Texture2D" uid="uid://bv81df6qc6c0v" path="res://Assets/Village/oak_woods_v1.0/decorations/fence_2.png" id="11_ych5a"]
 [ext_resource type="Texture2D" uid="uid://bimjpni5joy50" path="res://Assets/Village/oak_woods_v1.0/background/background_layer_3.png" id="13_baswt"]
-[ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="14_kkeok"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="15_yxs4h"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="20_7wnjr"]
 [ext_resource type="AudioStream" uid="uid://bkhna1v5gwrrs" path="res://Music by Pascal Belisle/Music by Pascal Belisle/platformer_level03_loop.ogg" id="20_kx3jn"]
 [ext_resource type="Script" path="res://Portal_Forest.gd" id="20_u5dit"]
 
@@ -8371,9 +8371,6 @@ position = Vector2(2881, 322)
 scale = Vector2(3.6, 3.61111)
 texture = ExtResource("13_baswt")
 
-[node name="Player" parent="." instance=ExtResource("14_kkeok")]
-position = Vector2(256, 552)
-
 [node name="Portal_River" parent="." instance=ExtResource("15_yxs4h")]
 position = Vector2(32, 528)
 
@@ -8384,6 +8381,9 @@ script = ExtResource("20_u5dit")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_kx3jn")
 autoplay = true
+
+[node name="Player" parent="." instance=ExtResource("20_7wnjr")]
+position = Vector2(265, 536)
 
 [connection signal="body_entered" from="Portal_River" to="Portal_River" method="_on_body_entered"]
 [connection signal="body_entered" from="Portal_Forest" to="Portal_Forest" method="_on_body_entered"]
