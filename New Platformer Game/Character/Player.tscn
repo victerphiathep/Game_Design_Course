@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://xxaoff7gwbrm"]
 
-[ext_resource type="Script" path="res://Character/player.gd" id="1_flj5s"]
+[ext_resource type="Script" path="res://Character/Player.gd" id="1_flj5s"]
 [ext_resource type="Texture2D" uid="uid://bwkibsbnveueg" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_uohqy"]
 [ext_resource type="Texture2D" uid="uid://bqp2prxkr308b" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_b8n8p"]
 [ext_resource type="Texture2D" uid="uid://dxai5gdtkg3fv" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png" id="2_c1ij0"]
@@ -425,8 +425,8 @@ graph_offset = Vector2(10, -36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bxls"]
 size = Vector2(27.5, 49)
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 2
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 9
 script = ExtResource("1_flj5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -434,8 +434,8 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ry2ya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("5_fhfe2")
-hframes = 15
+texture = ExtResource("1_uohqy")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

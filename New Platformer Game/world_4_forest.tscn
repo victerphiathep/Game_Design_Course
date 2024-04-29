@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boogeyk3vf7wd" path="res://Assets/sunny-land-forest-files/Sunny-land-forest-files/PNG/environment/layers/tileset.png" id="3_80444"]
 [ext_resource type="Texture2D" uid="uid://clcipvvisi5y7" path="res://Assets/sunny-land-forest-files/Sunny-land-forest-files/PNG/environment/props/house.png" id="4_5vigg"]
 [ext_resource type="Texture2D" uid="uid://drmtrfoooxy6f" path="res://Assets/sunny-land-forest-files/Sunny-land-forest-files/PNG/environment/props/vine.png" id="5_00g66"]
-[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="7_udt4q"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="7_udt4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g81vy"]
 texture = ExtResource("3_80444")

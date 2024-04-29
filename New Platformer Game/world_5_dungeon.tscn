@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="17_kwtiw"]
 [ext_resource type="PackedScene" uid="uid://ckbyfdnxaoeb5" path="res://pit_fall.tscn" id="18_ta744"]
 [ext_resource type="Script" path="res://Major_Pit_Fall.gd" id="19_6ffin"]
-[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="20_t6lul"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="20_t6lul"]
 [ext_resource type="Script" path="res://you_win!.gd" id="20_tco42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfnwv"]

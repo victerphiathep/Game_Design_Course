@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_eqpw1"]
 [ext_resource type="Texture2D" uid="uid://cqrqnlx2jpsop" path="res://Art/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_uo41u"]
-[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="2_t7emj"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="2_t7emj"]
 [ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="4_eexmd"]
 [ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="5_6oeeu"]
 

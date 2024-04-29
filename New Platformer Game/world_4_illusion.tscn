@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dstxoh78hr40d" path="res://Assets/forest_of_illusion_files/tileset.png" id="7_xqj4k"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="11_pa1of"]
 [ext_resource type="Script" path="res://Portal_Village.gd" id="12_mf1ck"]
-[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="13_8r3vp"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="13_8r3vp"]
 [ext_resource type="Script" path="res://Portal_Dungeon.gd" id="13_p3tfx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ln6kl"]

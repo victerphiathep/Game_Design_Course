@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bv81df6qc6c0v" path="res://Assets/Village/oak_woods_v1.0/decorations/fence_2.png" id="11_ych5a"]
 [ext_resource type="Texture2D" uid="uid://bimjpni5joy50" path="res://Assets/Village/oak_woods_v1.0/background/background_layer_3.png" id="13_baswt"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="15_yxs4h"]
-[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="20_7wnjr"]
+[ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="20_7wnjr"]
 [ext_resource type="AudioStream" uid="uid://bkhna1v5gwrrs" path="res://Music by Pascal Belisle/Music by Pascal Belisle/platformer_level03_loop.ogg" id="20_kx3jn"]
 [ext_resource type="Script" path="res://Portal_Forest.gd" id="20_u5dit"]
 

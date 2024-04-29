@@ -17,6 +17,7 @@ class_name Player
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var state_machine : CharacterStateMachine = $CharacterStateMachine
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction : Vector2 = Vector2.ZERO
@@ -25,7 +26,10 @@ var checkpoint_position: Vector2
 signal facing_direction_changed(facing_right : bool)
 
 func _ready():
+	add_to_group("Player")
 	animation_tree.active = true
+	
+	checkpoint_position = global_position # Initialize with starting position
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -69,3 +73,9 @@ func respawn():
 	global_position = respawn_pos
 	Game.currentHealth = 4  # Reset health
 	print("Respawned at checkpoint.")
+	
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		print("Second Checkpoint Mark")

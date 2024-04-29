@@ -1,6 +1,6 @@
 extends Node
 
-@export var player: Player
+# @export var player: Player
 const SAVE_PATH = "res://savegame.bin"
 
 
