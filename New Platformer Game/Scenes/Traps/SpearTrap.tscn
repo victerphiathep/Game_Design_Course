@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://l8owsw4qkmtr"]
+
+[ext_resource type="Script" path="res://Scenes/Traps/SpearTrap.gd" id="1_3sd2p"]
+[ext_resource type="Texture2D" uid="uid://bf65qffi0ch5u" path="res://Assets/Traps/ItemTraps_2/Spear.png" id="1_h0nan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exhmo"]
+size = Vector2(9, 15)
+
+[sub_resource type="Animation" id="Animation_f57hf"]
+resource_name = "SpearTrap"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 10, 9, 8, 7, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_exhmo"), SubResource("RectangleShape2D_exhmo"), SubResource("RectangleShape2D_exhmo"), SubResource("RectangleShape2D_exhmo"), SubResource("RectangleShape2D_exhmo"), SubResource("RectangleShape2D_exhmo")]
+}
+
+[sub_resource type="Animation" id="Animation_ygxxc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_exhmo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_beisj"]
+_data = {
+"RESET": SubResource("Animation_ygxxc"),
+"SpearTrap": SubResource("Animation_f57hf")
+}
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_3sd2p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_beisj")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h0nan")
+hframes = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 24.5)
+shape = SubResource("RectangleShape2D_exhmo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

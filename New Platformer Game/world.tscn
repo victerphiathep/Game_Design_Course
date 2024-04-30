@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=102 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://yqbg7lvkhj5c" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="39_4rkvw"]
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="48_b4rdt"]
 [ext_resource type="Script" path="res://testint_a_script.gd" id="51_ia8lr"]
+[ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="52_o13to"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -27209,6 +27210,9 @@ script = ExtResource("51_ia8lr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_ff61o")
+
+[node name="Area2D2" parent="." instance=ExtResource("52_o13to")]
+position = Vector2(1676, 299)
 
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
 [connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]
