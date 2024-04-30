@@ -1,6 +1,6 @@
 extends Node
 
-class_name Damageable
+class_name Damageable_Bee
 
 signal on_hit(node : Node, damage_taken : int, knockback_direction : Vector2)
 

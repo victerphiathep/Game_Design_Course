@@ -4,56 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b3bf0ufdufo4b" path="res://Art/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Attack/Attack-Sheet.png" id="1_ru6nk"]
 [ext_resource type="Texture2D" uid="uid://b86pdjcegjirj" path="res://Art/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Fly/Fly-Sheet.png" id="1_t0cw8"]
 [ext_resource type="Texture2D" uid="uid://cjxbg2g3c636m" path="res://Art/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Hit/Hit-Sheet.png" id="3_3kho1"]
-[ext_resource type="Script" path="res://Scenes/Mobs/Damageable_Bee.gd" id="5_32kja"]
+[ext_resource type="Script" path="res://Character/Enemies/Snail/Damageable.gd" id="5_uhb2t"]
 [ext_resource type="Script" path="res://Character/State.gd" id="7_xq88v"]
-[ext_resource type="Script" path="res://Scenes/Mobs/BeeHitState.gd" id="8_uvnhj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pemr2"]
 radius = 7.28011
-
-[sub_resource type="Animation" id="Animation_lmoud"]
-resource_name = "fly"
-length = 0.3
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_t0cw8")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_q46aq"]
-resource_name = "new_animation"
 
 [sub_resource type="Animation" id="Animation_qiixu"]
 length = 0.001
@@ -152,6 +107,50 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_lmoud"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_t0cw8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_q46aq"]
+resource_name = "new_animation"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8q8ki"]
 _data = {
 "RESET": SubResource("Animation_qiixu"),
@@ -192,12 +191,50 @@ states/fly/node = SubResource("AnimationNodeAnimation_b4gao")
 states/fly/position = Vector2(328, 89)
 transitions = ["Start", "fly", SubResource("AnimationNodeStateMachineTransition_ffogg"), "fly", "attack", SubResource("AnimationNodeStateMachineTransition_8mbo3"), "attack", "dead", SubResource("AnimationNodeStateMachineTransition_tvq7r"), "fly", "dead", SubResource("AnimationNodeStateMachineTransition_fqyob")]
 
+[sub_resource type="GDScript" id="GDScript_jyumw"]
+script/source = "extends State
+
+class_name BeeHitState
+
+@export var damageable : Damageable
+@export var dead_state : State
+@export var dead_animation_node : String = \"dead\"
+@export var knockback_speed : float = 100.0
+@export var return_state : State
+@export var character_state_machine = CharacterStateMachine
+
+
+@onready var timer : Timer = $Timer
+
+func _ready():
+	#  damageable.connect(\"on_hit\", on_damageable_hit)\\
+	pass
+	
+func on_enter():
+	timer.start()
+	
+func on_damageable_hit(node : Node, damage_amount : int, knockback_direction : Vector2):
+	if(damageable.health > 0):
+		character.velocity = knockback_speed * knockback_direction
+	else:
+		emit_signal(\"interrupt_state\", dead_state)
+		playback.travel(dead_animation_node)
+
+func on_exit():
+	character.velocity = Vector2.ZERO
+
+func _on_timer_timeout():
+	next_state = return_state
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7x4o8"]
 radius = 302.166
 
 [node name="Bee" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_6skms")
+starting_move_direction = null
+movement_speed = null
 
 [node name="Bee_Attack_Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 11)
@@ -220,11 +257,10 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_jqqlo")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Damageable" type="Node" parent="."]
-script = ExtResource("5_32kja")
-
-[node name="CharacterStateMachine" type="Node" parent="."]
-script = ExtResource("8_uvnhj")
+[node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("damageable", "dead_state")]
+script = SubResource("GDScript_jyumw")
+damageable = NodePath("../Damageable_Bee")
+dead_state = NodePath("Dead")
 
 [node name="Fly" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("7_xq88v")
@@ -232,8 +268,10 @@ script = ExtResource("7_xq88v")
 [node name="Attack" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("7_xq88v")
 
-[node name="Dead" type="Node" parent="CharacterStateMachine"]
-script = ExtResource("8_uvnhj")
+[node name="Dead" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "dead_state")]
+script = SubResource("GDScript_jyumw")
+damageable = NodePath("../../Damageable_Bee")
+dead_state = NodePath(".")
 can_move = false
 
 [node name="PlayerDetection" type="Area2D" parent="."]
@@ -242,4 +280,7 @@ can_move = false
 position = Vector2(-4, 8)
 shape = SubResource("CircleShape2D_7x4o8")
 
-[connection signal="animation_finished" from="AnimationTree" to="Damageable" method="_on_animation_tree_animation_finished"]
+[node name="Damageable_Bee" type="Node" parent="."]
+script = ExtResource("5_uhb2t")
+
+[connection signal="animation_finished" from="AnimationTree" to="Damageable_Bee" method="_on_animation_tree_animation_finished"]
