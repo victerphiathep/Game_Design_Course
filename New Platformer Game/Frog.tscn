@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://4io1vg8e1cwi"]
+[gd_scene load_steps=24 format=3 uid="uid://4io1vg8e1cwi"]
 
 [ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
 [ext_resource type="Script" path="res://Frog.gd" id="1_h1wq8"]
 [ext_resource type="Texture2D" uid="uid://0vxg673nr403" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-jump.png" id="2_ux3b5"]
+[ext_resource type="Script" path="res://Character/Enemies/Snail/Damageable.gd" id="5_2nh5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r6w0"]
 size = Vector2(21, 11)
@@ -158,6 +159,9 @@ shape = SubResource("RectangleShape2D_5r6w0")
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_tj84u")
 animation = &"Idle"
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("5_2nh5j")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

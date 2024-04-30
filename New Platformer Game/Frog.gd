@@ -13,6 +13,7 @@ signal frog_defeated # Signal frog to be beat
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
+	player = get_tree().get_nodes_in_group("Player")[0]
 	
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -22,16 +23,16 @@ func _physics_process(delta):
 		velocity.x = 0
 		if get_node("AnimatedSprite2D").animation != "Death":
 			get_node("AnimatedSprite2D").play("Idle")
-	
+
 	move_and_slide()
 
 func pursue_player(delta):
 	if get_node("AnimatedSprite2D").animation != "Death":
 		get_node("AnimatedSprite2D").play("Jump")
-	player = get_node("../../Player/Player")
-	var direction = (player.position - self.position).normalized()
-	get_node("AnimatedSprite2D").flip_h = direction.x > 0
-	velocity.x = direction.x * SPEED
+	if player:  # Make sure player is not null
+		var direction = (player.global_position - global_position).normalized()
+		get_node("AnimatedSprite2D").flip_h = direction.x > 0
+		velocity.x = direction.x * SPEED
 	
 func apply_damage(damage_amount):
 	hp -= damage_amount

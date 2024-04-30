@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=106 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -52,6 +52,9 @@
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="48_b4rdt"]
 [ext_resource type="Script" path="res://testint_a_script.gd" id="51_ia8lr"]
 [ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="52_o13to"]
+[ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="53_3ll1h"]
+[ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="54_my72l"]
+[ext_resource type="PackedScene" uid="uid://ky3yxih83dbf" path="res://Scenes/Mobs/bee.tscn" id="55_oiwve"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
 
@@ -26993,6 +26996,9 @@ func _on_timer_timeout():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff61o"]
 size = Vector2(26, 54)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1rpd"]
+size = Vector2(100, 20)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(0, 368)
@@ -27175,9 +27181,10 @@ position = Vector2(483, 865)
 script = ExtResource("36_om6mv")
 
 [node name="Pit_Fall" parent="." instance=ExtResource("37_f6m2w")]
-position = Vector2(2821, 397)
+position = Vector2(2796, 396)
 
 [node name="BG" type="ParallaxBackground" parent="."]
+visible = false
 scroll_offset = Vector2(-1812.29, -553.165)
 script = ExtResource("1_aoctp")
 
@@ -27213,6 +27220,45 @@ shape = SubResource("RectangleShape2D_ff61o")
 
 [node name="Area2D2" parent="." instance=ExtResource("52_o13to")]
 position = Vector2(1676, 299)
+
+[node name="Hive_Collision_Hit" type="Area2D" parent="."]
+position = Vector2(2552, 721)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(43, 3)
+shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(396, 6)
+shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(686, 5)
+shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(686, 5)
+shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="Bee" parent="." instance=ExtResource("55_oiwve")]
+position = Vector2(1541, 266)
+
+[node name="Snail" parent="." instance=ExtResource("53_3ll1h")]
+position = Vector2(2583, 84)
+
+[node name="Snail2" parent="." instance=ExtResource("53_3ll1h")]
+position = Vector2(2507, 292)
+
+[node name="Snail3" parent="." instance=ExtResource("53_3ll1h")]
+position = Vector2(2921, -35)
+
+[node name="Snail4" parent="." instance=ExtResource("53_3ll1h")]
+position = Vector2(2646, -148)
+
+[node name="Snail5" parent="." instance=ExtResource("53_3ll1h")]
+position = Vector2(2140, 289)
+
+[node name="HealthChangedManager" parent="." instance=ExtResource("54_my72l")]
 
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
 [connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]
