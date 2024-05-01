@@ -12,10 +12,5 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-    # Check if the body is the player and act accordingly
     if body.is_in_group("Player"):
         body.respawn()  # This assumes the player has a method 'respawn' that handles the logic to teleport to the checkpoint
-
-
-func _on_hive_collision_hit_body_entered(body):
-    pass # Replace with function body.

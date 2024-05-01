@@ -13,19 +13,19 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animation_tree.active = true
+    animation_tree.active = true
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+    # Add the gravity.
+    if not is_on_floor():
+        velocity.y += gravity * delta
 
-	# Will move if in a CharacterStateMachine State that allows movement
-	var direction : Vector2 = starting_move_direction
-	if direction && state_machine.check_if_can_move():
-		velocity.x = direction.x * movement_speed
-	# Reduce movement if not in the hit state (hit state has it's only movement rules for knockback)
-	elif state_machine.current_state != hit_state:
-		velocity.x = move_toward(velocity.x, 0, movement_speed)
+    # Will move if in a CharacterStateMachine State that allows movement
+    var direction : Vector2 = starting_move_direction
+    if direction && state_machine.check_if_can_move():
+        velocity.x = direction.x * movement_speed
+    # Reduce movement if not in the hit state (hit state has it's only movement rules for knockback)
+    elif state_machine.current_state != hit_state:
+        velocity.x = move_toward(velocity.x, 0, movement_speed)
 
-	move_and_slide()
+    move_and_slide()

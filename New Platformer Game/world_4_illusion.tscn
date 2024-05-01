@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dcw03ihnottvo"]
+[gd_scene load_steps=27 format=3 uid="uid://dcw03ihnottvo"]
 
 [ext_resource type="Texture2D" uid="uid://846sd62es0hj" path="res://Assets/forest_of_illusion_files/Tall Forest Files/Layers/tileset.png" id="1_m24rr"]
 [ext_resource type="Texture2D" uid="uid://b2cdgwlbn558g" path="res://Assets/forest_of_illusion_files/Forest of Illusion Files/Layers/back.png" id="1_vrch6"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://Portal_Village.gd" id="12_mf1ck"]
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="13_8r3vp"]
 [ext_resource type="Script" path="res://Portal_Dungeon.gd" id="13_p3tfx"]
+[ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="14_an6lx"]
+[ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="15_6v0pk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ln6kl"]
 texture = ExtResource("1_m24rr")
@@ -1637,6 +1639,87 @@ script = ExtResource("13_p3tfx")
 
 [node name="Player" parent="." instance=ExtResource("13_8r3vp")]
 position = Vector2(86, 251)
+
+[node name="Snail" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(474, 260)
+
+[node name="Snail2" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(767, 261)
+
+[node name="Snail3" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(659, 261)
+
+[node name="Snail4" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(1309, 194)
+
+[node name="Snail5" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(1990, 176)
+
+[node name="Snail6" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(1877, 496)
+
+[node name="Snail7" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2175, 449)
+
+[node name="Snail8" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2149, 592)
+
+[node name="Snail9" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2431, 145)
+
+[node name="Snail10" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2971, 336)
+
+[node name="Snail11" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3254, 338)
+
+[node name="Snail12" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3262, 559)
+
+[node name="Snail13" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2968, 576)
+
+[node name="Snail14" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3504, 877)
+
+[node name="Snail15" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3318, 881)
+
+[node name="Snail16" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3067, 878)
+
+[node name="Snail17" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(2845, 877)
+
+[node name="Snail18" parent="." instance=ExtResource("14_an6lx")]
+position = Vector2(3306, 803)
+
+[node name="Area2D" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(3056, 809)
+
+[node name="Area2D2" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(3152, 810)
+
+[node name="Area2D3" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(3085, 565)
+
+[node name="Area2D4" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(3266, 565)
+
+[node name="Area2D5" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(2352, 312)
+
+[node name="Area2D6" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(2560, 360)
+
+[node name="Area2D7" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(2479, 281)
+
+[node name="Area2D8" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(2671, 651)
+
+[node name="Area2D9" parent="." instance=ExtResource("15_6v0pk")]
+position = Vector2(2672, 538)
 
 [connection signal="body_entered" from="Portal_Village" to="Portal_Village" method="_on_body_entered"]
 [connection signal="body_entered" from="Portal_Dungeon" to="Portal_Dungeon" method="_on_body_entered"]

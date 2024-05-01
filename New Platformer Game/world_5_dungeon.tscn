@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b17i073dy321"]
+[gd_scene load_steps=40 format=3 uid="uid://b17i073dy321"]
 
 [ext_resource type="Texture2D" uid="uid://b1qrcqr8jfwqa" path="res://Assets/Dungeon/Rocky Pass Files/PNG/back.png" id="1_kokfm"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="1_sdtwc"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" path="res://Major_Pit_Fall.gd" id="19_6ffin"]
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="20_t6lul"]
 [ext_resource type="Script" path="res://you_win!.gd" id="20_tco42"]
+[ext_resource type="PackedScene" uid="uid://l8owsw4qkmtr" path="res://Scenes/Traps/SpearTrap.tscn" id="21_ij702"]
+[ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="22_ce318"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfnwv"]
 texture = ExtResource("3_hvnws")
@@ -2047,6 +2049,75 @@ shape = SubResource("RectangleShape2D_2owot")
 
 [node name="Player" parent="." instance=ExtResource("20_t6lul")]
 position = Vector2(89, 416)
+
+[node name="Area2D" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2311, 577)
+
+[node name="Area2D2" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2439, 577)
+
+[node name="Area2D3" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2395, 674)
+
+[node name="Area2D4" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2508, 673)
+
+[node name="Area2D5" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2652, 673)
+
+[node name="Area2D6" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2600, 513)
+
+[node name="Area2D7" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2727, 577)
+
+[node name="Area2D8" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2281, 720)
+
+[node name="Area2D9" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2339, 833)
+
+[node name="Area2D10" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2622, 832)
+
+[node name="Area2D11" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2490, 832)
+
+[node name="Area2D12" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2409, 1119)
+
+[node name="Area2D13" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2484, 1120)
+
+[node name="Area2D14" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2728, 1120)
+
+[node name="Area2D15" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(1911, 1073)
+
+[node name="Area2D16" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(1783, 997)
+
+[node name="Area2D17" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(1495, 971)
+
+[node name="Area2D18" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(1865, 763)
+
+[node name="Area2D19" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(1703, 731)
+
+[node name="Area2D20" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(2448, 1146)
+
+[node name="Area2D21" parent="." instance=ExtResource("22_ce318")]
+position = Vector2(2224, 491)
+
+[node name="Area2D22" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2199, 464)
+
+[node name="Area2D23" parent="." instance=ExtResource("21_ij702")]
+position = Vector2(2248, 464)
 
 [connection signal="body_entered" from="Portal_Forest_Illusion" to="Portal_Forest_Illusion" method="_on_body_entered"]
 [connection signal="body_entered" from="Major_Pit_Fall" to="Major_Pit_Fall" method="_on_body_entered"]
