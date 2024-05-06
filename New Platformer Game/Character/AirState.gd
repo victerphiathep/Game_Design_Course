@@ -32,3 +32,5 @@ func double_jump():
 	character.velocity.y = double_jump_velocity
 	playback.travel(double_jump_animation)
 	has_double_jumped = true
+	$Jump_Sound2.play()
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=116 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -27028,6 +27028,18 @@ size = Vector2(26, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1rpd"]
 size = Vector2(100, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_440ro"]
+size = Vector2(39, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61kpj"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juses"]
+size = Vector2(56.5, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xd3r"]
+size = Vector2(11.25, 45.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5tee"]
 size = Vector2(55.75, 15)
 
@@ -27107,7 +27119,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(983151, 131072, 0, 983153, 131072, 0, 1179759, 131072, 0, 1179760, 131072, 0, 1179761, 131072, 0, 1179762, 131072, 0, 1179763, 131072, 0, 1179764, 131072, 0, -262054, 0, 0, -262053, 65536, 0, -262052, 65536, 0, -262051, 65536, 0, -262050, 65536, 0, -262044, 65536, 0, -262043, 65536, 0, -262042, 65536, 0, -262049, 65536, 0, -262048, 65536, 0, -262047, 65536, 0, -262046, 65536, 0, -262045, 65536, 0, -524172, 983040, 15, -655230, 1310720, 15, -589694, 1310720, 16, 3080201, 720897, 16, 3145737, 720897, 16, 3211273, 720897, 16, 3080202, 720897, 16, 3145738, 720897, 16, 3211274, 720897, 16, 3080203, 720897, 16, 3145739, 720897, 16, 3211275, 720897, 16, 3080204, 720897, 16, 3145740, 720897, 16, 3211276, 720897, 16, 3080205, 720897, 16, 3145741, 720897, 16, 3211277, 720897, 16, 3080206, 720897, 16, 3145742, 720897, 16, 3211278, 720897, 16, 3080207, 720897, 16, 3145743, 720897, 16, 3211279, 720897, 16, 3080208, 720897, 16, 3145744, 720897, 16, 3211280, 720897, 16, 3080209, 720897, 16, 3145745, 720897, 16, 3211281, 720897, 16, 3080210, 720897, 16, 3145746, 720897, 16, 3211282, 720897, 16)
 
 [node name="Player" parent="." instance=ExtResource("48_b4rdt")]
-position = Vector2(1825, 283)
+position = Vector2(560, 856)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -27274,6 +27286,30 @@ script = ExtResource("55_c8uq5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hive_Collision_Hit"]
 position = Vector2(43, 3)
 shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="Mine_Spike" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(171, -420)
+shape = SubResource("RectangleShape2D_440ro")
+
+[node name="Mine_Spike2" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(386, -420)
+shape = SubResource("RectangleShape2D_440ro")
+
+[node name="Mine_Spike5" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(1298, -453)
+shape = SubResource("RectangleShape2D_61kpj")
+
+[node name="Mine_Spike6" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(1454, -454)
+shape = SubResource("RectangleShape2D_61kpj")
+
+[node name="Mine_Spike3" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(1375.75, -453)
+shape = SubResource("RectangleShape2D_juses")
+
+[node name="Mine_Spike4" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(1509, -502)
+shape = SubResource("RectangleShape2D_2xd3r")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hive_Collision_Hit"]
 position = Vector2(396, 6)

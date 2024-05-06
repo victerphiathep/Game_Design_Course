@@ -22,6 +22,7 @@ Utils="*res://Global/Utils.gd"
 scene_manager="*res://scene_manager.gd"
 CheckpointManager="*res://CheckpointManager.gd"
 SignalBus="*res://signal_bus.gd"
+AudioManager="*res://AudioManager.gd"
 
 [display]
 

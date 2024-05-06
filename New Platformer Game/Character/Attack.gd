@@ -12,11 +12,13 @@ extends State
 func state_input(event : InputEvent):
 	if(event.is_action_pressed("attack")):
 		timer.start()
+		
 
 func _on_animation_tree_animation_finished(anim_name):
 	# Switch to attack2 if attack is pressed or
 	# leave to the return state if attack is not pressed
 	if(anim_name == attack1_name):
+		#$Attack_Sound.play()
 		if(timer.is_stopped()):
 			next_state = return_state
 			playback.travel(return_animation_node)
@@ -25,5 +27,6 @@ func _on_animation_tree_animation_finished(anim_name):
 		
 	# Attack2 exits to return state after the animation is finished
 	if(anim_name == attack2_name):
+		$Attack_Sound2.play()
 		next_state = return_state
 		playback.travel(return_animation_node)
