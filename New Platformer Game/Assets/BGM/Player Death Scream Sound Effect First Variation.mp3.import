@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4dkvhajeld7i"
+path="res://.godot/imported/Player Death Scream Sound Effect First Variation.mp3-0e044cafbf7cb2493fe82ae7db522f02.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/Player Death Scream Sound Effect First Variation.mp3"
+dest_files=["res://.godot/imported/Player Death Scream Sound Effect First Variation.mp3-0e044cafbf7cb2493fe82ae7db522f02.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

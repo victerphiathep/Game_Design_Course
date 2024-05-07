@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=125 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://NextLevel.gd" id="1_2tv7c"]
 [ext_resource type="Script" path="res://world.gd" id="1_33yey"]
@@ -56,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="53_3ll1h"]
 [ext_resource type="AudioStream" uid="uid://dh8e0roakjpe7" path="res://Assets/BGM/[MapleStory BGM] Maple Island_ Maple Leaf (KMST 1.2.481).mp3" id="53_cw2p7"]
 [ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="54_my72l"]
+[ext_resource type="AudioStream" uid="uid://d4dkvhajeld7i" path="res://Assets/BGM/Player Death Scream Sound Effect First Variation.mp3" id="55_bb534"]
 [ext_resource type="Script" path="res://Hive_Collision_Hit.gd" id="55_c8uq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wasa"]
@@ -27028,6 +27029,30 @@ size = Vector2(26, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1rpd"]
 size = Vector2(100, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbici"]
+size = Vector2(58, 113.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i42dk"]
+size = Vector2(58, 56.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syrw4"]
+size = Vector2(58, 72.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljdf0"]
+size = Vector2(180, 125.188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo328"]
+size = Vector2(85, 49.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqqpa"]
+size = Vector2(58, 135.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jtmi"]
+size = Vector2(163, 36.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lox62"]
+size = Vector2(58, 124)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_440ro"]
 size = Vector2(39, 12)
 
@@ -27267,10 +27292,6 @@ position = Vector2(2880, 138)
 scale = Vector2(3, 4.21667)
 texture = ExtResource("39_4rkvw")
 
-[node name="BG_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("53_cw2p7")
-autoplay = true
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1928, 286)
 script = ExtResource("51_ia8lr")
@@ -27283,9 +27304,45 @@ shape = SubResource("RectangleShape2D_ff61o")
 position = Vector2(2552, 721)
 script = ExtResource("55_c8uq5")
 
+[node name="Player_Death" type="AudioStreamPlayer2D" parent="Hive_Collision_Hit"]
+position = Vector2(-624, -435)
+stream = ExtResource("55_bb534")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hive_Collision_Hit"]
 position = Vector2(43, 3)
 shape = SubResource("RectangleShape2D_t1rpd")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(-94, -102)
+shape = SubResource("RectangleShape2D_lbici")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(24, -126.375)
+shape = SubResource("RectangleShape2D_i42dk")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(357, -117)
+shape = SubResource("RectangleShape2D_syrw4")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(533, -157.594)
+shape = SubResource("RectangleShape2D_ljdf0")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(72.5, -59.6875)
+shape = SubResource("RectangleShape2D_bo328")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(180, -84.875)
+shape = SubResource("RectangleShape2D_jqqpa")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(249.5, -230.375)
+shape = SubResource("RectangleShape2D_6jtmi")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Hive_Collision_Hit"]
+position = Vector2(-152, -224)
+shape = SubResource("RectangleShape2D_lox62")
 
 [node name="Mine_Spike" type="CollisionShape2D" parent="Hive_Collision_Hit"]
 position = Vector2(171, -420)
@@ -27373,6 +27430,10 @@ position = Vector2(2140, 289)
 [node name="HealthChangedManager" parent="." instance=ExtResource("54_my72l")]
 
 [node name="HealthChangedManager4" parent="." instance=ExtResource("54_my72l")]
+
+[node name="BG_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("53_cw2p7")
+autoplay = true
 
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
 [connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]

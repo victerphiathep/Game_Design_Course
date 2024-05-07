@@ -1,31 +1,44 @@
 extends CharacterBody2D
 
-@onready var animation_tree : AnimationTree = $AnimationTree
+@onready var sprite : Sprite2D = $Sprite2D  # Assuming the Sprite node is direct child
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var state_machine : CharacterStateMachine = $CharacterStateMachine
 
-# Walks left by default
+# Default movement direction is left
 @export var starting_move_direction : Vector2 = Vector2.LEFT
 @export var movement_speed : float = 30.0
 @export var hit_state : State
 
-@onready var state_machine : CharacterStateMachine = $CharacterStateMachine
+# Player detection chase
+var chase = false
+var player : Node
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+# Gravity setup
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animation_tree.active = true
+	animation_player.active = true
+	player = get_tree().get_nodes_in_group("Player")[0]  # Assuming Player is in 'Player' group
 
 func _physics_process(delta):
-	# Add the gravity.
+	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Will move if in a CharacterStateMachine State that allows movement
-	var direction : Vector2 = starting_move_direction
-	if direction && state_machine.check_if_can_move():
+	# Movement and sprite orientation
+	if chase and player:
+		var direction = (player.global_position - global_position).normalized()
 		velocity.x = direction.x * movement_speed
-	# Reduce movement if not in the hit state (hit state has it's only movement rules for knockback)
-	elif state_machine.current_state != hit_state:
+		sprite.flip_h = direction.x > 0  # Flip sprite based on direction
+	else:
 		velocity.x = move_toward(velocity.x, 0, movement_speed)
 
 	move_and_slide()
+
+func _on_player_detection_body_entered(body):
+	if body.is_in_group("Player"):
+		chase = true
+
+func _on_player_detection_body_exited(body):
+	if body.is_in_group("Player"):
+		chase = false

@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckbyfdnxaoeb5"]
+[gd_scene load_steps=4 format=3 uid="uid://ckbyfdnxaoeb5"]
 
 [ext_resource type="Script" path="res://Pit_Fall.gd" id="1_ctxky"]
+[ext_resource type="AudioStream" uid="uid://d4dkvhajeld7i" path="res://Assets/BGM/Player Death Scream Sound Effect First Variation.mp3" id="2_lbwtd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scnin"]
-size = Vector2(67, 20)
+size = Vector2(75, 20)
 
 [node name="Pit_Fall" type="Area2D"]
 script = ExtResource("1_ctxky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(23.5, 0)
+position = Vector2(27.5, 0)
 shape = SubResource("RectangleShape2D_scnin")
+
+[node name="Player_Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lbwtd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://deben2mpqejc2"]
+[gd_scene load_steps=19 format=3 uid="uid://deben2mpqejc2"]
 
 [ext_resource type="Texture2D" uid="uid://cxij3cdd4xf4t" path="res://Art/Legacy-Fantasy - High Forest 2.3/Mob/Snail/Dead-Sheet.png" id="1_0pdbs"]
 [ext_resource type="Texture2D" uid="uid://dpii7hugyoc76" path="res://Art/Legacy-Fantasy - High Forest 2.3/Mob/Snail/walk-Sheet.png" id="1_5ffvy"]
@@ -133,6 +133,9 @@ states/walk/node = SubResource("AnimationNodeAnimation_o7x83")
 states/walk/position = Vector2(375, 100)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_2buw0"), "walk", "dead", SubResource("AnimationNodeStateMachineTransition_oon41")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytft2"]
+radius = 253.87
+
 [node name="Snail" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
 position = Vector2(26, 88)
 collision_layer = 4
@@ -186,5 +189,12 @@ can_move = false
 wait_time = 0.25
 one_shot = true
 
+[node name="Player_Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Detection"]
+shape = SubResource("CircleShape2D_ytft2")
+
 [connection signal="animation_finished" from="AnimationTree" to="Damageable" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="CharacterStateMachine/Hit/Timer" to="CharacterStateMachine/Hit" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Player_Detection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Player_Detection" to="." method="_on_player_detection_body_exited"]
