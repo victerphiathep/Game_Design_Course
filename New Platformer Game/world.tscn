@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://dcar1vkg5agu3" path="res://Sunny Land houses/Sunny Land Trees Props Pack/previews/all-bg.png" id="9_rm4c4"]
 [ext_resource type="Script" path="res://TextureProgressBar.gd" id="9_ryfho"]
 [ext_resource type="Texture2D" uid="uid://bmbveu3o711s7" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="9_xihfj"]
-[ext_resource type="AudioStream" uid="uid://bagymqetehv3p" path="res://Music by Ansimuz/Music by Ansimuz/magic cliffs.ogg" id="10_hspec"]
 [ext_resource type="Texture2D" uid="uid://r8qjrv8sib2g" path="res://Sunny Land houses/Sunny Land Trees Props Pack/previews/all.png" id="10_uw1et"]
 [ext_resource type="Texture2D" uid="uid://7an4fxy1wa0f" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Golden-Tree.png" id="10_xacw4"]
 [ext_resource type="Texture2D" uid="uid://cr2ssyt157hd0" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Red-Tree.png" id="11_2vm3c"]
@@ -55,6 +54,7 @@
 [ext_resource type="Script" path="res://testint_a_script.gd" id="51_ia8lr"]
 [ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="52_o13to"]
 [ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="53_3ll1h"]
+[ext_resource type="AudioStream" uid="uid://dh8e0roakjpe7" path="res://Assets/BGM/[MapleStory BGM] Maple Island_ Maple Leaf (KMST 1.2.481).mp3" id="53_cw2p7"]
 [ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="54_my72l"]
 [ext_resource type="Script" path="res://Hive_Collision_Hit.gd" id="55_c8uq5"]
 
@@ -27065,6 +27065,9 @@ script = ExtResource("1_2tv7c")
 position = Vector2(768, -424)
 shape = SubResource("CapsuleShape2D_1wasa")
 
+[node name="Spike_Trap" parent="." instance=ExtResource("52_o13to")]
+position = Vector2(2722, 88)
+
 [node name="NextLevel_Forest" type="Area2D" parent="."]
 position = Vector2(1744, 296)
 script = ExtResource("2_oeysv")
@@ -27265,7 +27268,7 @@ scale = Vector2(3, 4.21667)
 texture = ExtResource("39_4rkvw")
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_hspec")
+stream = ExtResource("53_cw2p7")
 autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27275,9 +27278,6 @@ script = ExtResource("51_ia8lr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_ff61o")
-
-[node name="Spike_Trap" parent="." instance=ExtResource("52_o13to")]
-position = Vector2(1676, 299)
 
 [node name="Hive_Collision_Hit" type="Area2D" parent="."]
 position = Vector2(2552, 721)

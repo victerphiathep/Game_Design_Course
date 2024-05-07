@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://ogeubgkpt7jb" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="6_0c7x8"]
 [ext_resource type="Texture2D" uid="uid://cr2ssyt157hd0" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Red-Tree.png" id="6_5yu8u"]
 [ext_resource type="Script" path="res://Portal_Village.gd" id="6_hp1oe"]
-[ext_resource type="AudioStream" uid="uid://lqu46o77mska" path="res://Music by Ansimuz/Music by Ansimuz/summer nights.ogg" id="6_kcdgw"]
 [ext_resource type="Texture2D" uid="uid://c1xd24x2w6puc" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="7_1m3m0"]
 [ext_resource type="Texture2D" uid="uid://cqs36nsf4thbv" path="res://Assets/Player/Legacy-Fantasy - High Forest 2.3/Trees/Yellow-Tree.png" id="7_judk0"]
+[ext_resource type="AudioStream" uid="uid://contko5di60u2" path="res://Assets/BGM/[MapleStory BGM] Henesys_ Rest N Peace.mp3" id="16_afq7l"]
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/Player.tscn" id="17_sajml"]
 [ext_resource type="PackedScene" uid="uid://deben2mpqejc2" path="res://Character/Enemies/Snail/snail.tscn" id="18_xicau"]
 [ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="19_b7ht1"]
@@ -23156,7 +23156,7 @@ scale = Vector2(3, 1.63333)
 texture = ExtResource("3_ks0qw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_kcdgw")
+stream = ExtResource("16_afq7l")
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("17_sajml")]

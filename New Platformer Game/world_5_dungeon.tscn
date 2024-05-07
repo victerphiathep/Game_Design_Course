@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b17i073dy321"]
+[gd_scene load_steps=45 format=3 uid="uid://b17i073dy321"]
 
 [ext_resource type="Texture2D" uid="uid://b1qrcqr8jfwqa" path="res://Assets/Dungeon/Rocky Pass Files/PNG/back.png" id="1_kokfm"]
 [ext_resource type="PackedScene" uid="uid://b38r3cljuu5x4" path="res://Portal.tscn" id="1_sdtwc"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://you_win!.gd" id="20_tco42"]
 [ext_resource type="PackedScene" uid="uid://l8owsw4qkmtr" path="res://Scenes/Traps/SpearTrap.tscn" id="21_ij702"]
 [ext_resource type="PackedScene" uid="uid://b2vlgvybc2215" path="res://Scenes/Traps/SpikeTrap.tscn" id="22_ce318"]
+[ext_resource type="AudioStream" uid="uid://vxq4wif1ogiy" path="res://Assets/BGM/[MapleStory BGM] Sleepywood_ Ancient Move.mp3" id="23_4ihh3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfnwv"]
 texture = ExtResource("3_hvnws")
@@ -1972,6 +1973,18 @@ sources/11 = SubResource("TileSetAtlasSource_l5qua")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yderm"]
 size = Vector2(2135.5, 160)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3d4g"]
+size = Vector2(48.1875, 10.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8th2"]
+size = Vector2(31.0938, 12.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlpo8"]
+size = Vector2(15.6367, 7.1875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvqdf"]
+size = Vector2(8.90918, 14.2969)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2owot"]
 size = Vector2(78, 20)
 
@@ -2031,6 +2044,12 @@ position = Vector2(1553, 480)
 [node name="Pit_Fall2" parent="." instance=ExtResource("18_ta744")]
 position = Vector2(1666, 479)
 
+[node name="Pit_Fall3" parent="." instance=ExtResource("18_ta744")]
+position = Vector2(1425, 428)
+
+[node name="Pit_Fall4" parent="." instance=ExtResource("18_ta744")]
+position = Vector2(1609, 431)
+
 [node name="Major_Pit_Fall" type="Area2D" parent="."]
 position = Vector2(2276, 1261)
 script = ExtResource("19_6ffin")
@@ -2038,6 +2057,94 @@ script = ExtResource("19_6ffin")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Major_Pit_Fall"]
 position = Vector2(-33, 19)
 shape = SubResource("RectangleShape2D_yderm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-1005, -274)
+shape = SubResource("RectangleShape2D_k3d4g")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-492, -387.812)
+shape = SubResource("RectangleShape2D_k3d4g")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-493, -359)
+shape = SubResource("RectangleShape2D_k3d4g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-869.547, -531)
+shape = SubResource("RectangleShape2D_i8th2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-660, -386)
+shape = SubResource("RectangleShape2D_i8th2")
+
+[node name="single_tile_collision" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-556, -114)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision3" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-1101, -114)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision4" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-1052, -386)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision6" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-1036, -530)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision5" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-1004, -386)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision8" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-317, -563)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision9" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-316, -659)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision7" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-828, -386)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision2" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-428, -114)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision17" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-268, -138)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision16" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-364, -137)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision11" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-460, -242)
+shape = SubResource("RectangleShape2D_dlpo8")
+
+[node name="single_tile_collision12" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-351.455, -149.148)
+shape = SubResource("RectangleShape2D_vvqdf")
+
+[node name="single_tile_collision13" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-378, -149)
+shape = SubResource("RectangleShape2D_vvqdf")
+
+[node name="single_tile_collision14" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-282, -149)
+shape = SubResource("RectangleShape2D_vvqdf")
+
+[node name="single_tile_collision15" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-254, -149)
+shape = SubResource("RectangleShape2D_vvqdf")
+
+[node name="single_tile_collision10" type="CollisionShape2D" parent="Major_Pit_Fall"]
+position = Vector2(-524, -243)
+shape = SubResource("RectangleShape2D_dlpo8")
 
 [node name="you_win!" type="Area2D" parent="."]
 position = Vector2(2997, 327)
@@ -2118,6 +2225,9 @@ position = Vector2(2199, 464)
 
 [node name="Area2D23" parent="." instance=ExtResource("21_ij702")]
 position = Vector2(2248, 464)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_4ihh3")
 
 [connection signal="body_entered" from="Portal_Forest_Illusion" to="Portal_Forest_Illusion" method="_on_body_entered"]
 [connection signal="body_entered" from="Major_Pit_Fall" to="Major_Pit_Fall" method="_on_body_entered"]

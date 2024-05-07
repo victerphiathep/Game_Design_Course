@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr8ee1724l1l8"
+path="res://.godot/imported/[MapleStory BGM] Kerning City_ Jungle Book.mp3-2df42080d7efb8d7c7b1d700b43268ad.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/[MapleStory BGM] Kerning City_ Jungle Book.mp3"
+dest_files=["res://.godot/imported/[MapleStory BGM] Kerning City_ Jungle Book.mp3-2df42080d7efb8d7c7b1d700b43268ad.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

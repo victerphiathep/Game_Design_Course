@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://contko5di60u2"
+path="res://.godot/imported/[MapleStory BGM] Henesys_ Rest N Peace.mp3-b2ce3d241c9eb48e9c95a710677bdb40.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/[MapleStory BGM] Henesys_ Rest N Peace.mp3"
+dest_files=["res://.godot/imported/[MapleStory BGM] Henesys_ Rest N Peace.mp3-b2ce3d241c9eb48e9c95a710677bdb40.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

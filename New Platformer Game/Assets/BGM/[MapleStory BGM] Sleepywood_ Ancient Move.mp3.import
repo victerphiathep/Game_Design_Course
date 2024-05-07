@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vxq4wif1ogiy"
+path="res://.godot/imported/[MapleStory BGM] Sleepywood_ Ancient Move.mp3-76b83f6ac55875c80aae4a0a4b05570b.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/[MapleStory BGM] Sleepywood_ Ancient Move.mp3"
+dest_files=["res://.godot/imported/[MapleStory BGM] Sleepywood_ Ancient Move.mp3-76b83f6ac55875c80aae4a0a4b05570b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

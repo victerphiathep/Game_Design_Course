@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7kx8hydg7fyc"
+path="res://.godot/imported/[MapleStory BGM] Ellin Forest.mp3-f89887c4a54d9c72b903631255a72dbd.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/[MapleStory BGM] Ellin Forest.mp3"
+dest_files=["res://.godot/imported/[MapleStory BGM] Ellin Forest.mp3-f89887c4a54d9c72b903631255a72dbd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

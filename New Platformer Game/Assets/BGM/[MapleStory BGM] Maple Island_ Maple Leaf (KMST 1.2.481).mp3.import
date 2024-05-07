@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dh8e0roakjpe7"
+path="res://.godot/imported/[MapleStory BGM] Maple Island_ Maple Leaf (KMST 1.2.481).mp3-7c14b0a724b95f9d8c19c90b51d3aadd.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/[MapleStory BGM] Maple Island_ Maple Leaf (KMST 1.2.481).mp3"
+dest_files=["res://.godot/imported/[MapleStory BGM] Maple Island_ Maple Leaf (KMST 1.2.481).mp3-7c14b0a724b95f9d8c19c90b51d3aadd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
