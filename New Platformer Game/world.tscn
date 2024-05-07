@@ -27372,6 +27372,8 @@ position = Vector2(2140, 289)
 
 [node name="HealthChangedManager" parent="." instance=ExtResource("54_my72l")]
 
+[node name="HealthChangedManager4" parent="." instance=ExtResource("54_my72l")]
+
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]
 [connection signal="body_entered" from="NextLevel_Forest" to="NextLevel_Forest" method="_on_body_entered"]
 [connection signal="body_entered" from="Main_Tiles/Portal_Treehouse" to="Main_Tiles/Portal_Treehouse" method="_on_body_entered"]

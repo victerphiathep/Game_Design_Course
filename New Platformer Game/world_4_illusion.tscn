@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcw03ihnottvo"]
+[gd_scene load_steps=31 format=3 uid="uid://dcw03ihnottvo"]
 
 [ext_resource type="Texture2D" uid="uid://846sd62es0hj" path="res://Assets/forest_of_illusion_files/Tall Forest Files/Layers/tileset.png" id="1_m24rr"]
 [ext_resource type="Texture2D" uid="uid://b2cdgwlbn558g" path="res://Assets/forest_of_illusion_files/Forest of Illusion Files/Layers/back.png" id="1_vrch6"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://covar11igmvop" path="res://checkpoint.tscn" id="16_ekw0a"]
 [ext_resource type="Script" path="res://First_Checkpoint.gd" id="17_wp8oq"]
 [ext_resource type="PackedScene" uid="uid://btfu8q8ts8o4m" path="res://plant_spin.tscn" id="18_ci321"]
+[ext_resource type="PackedScene" uid="uid://cu7yt54vied0x" path="res://UI/health_changed_manager.tscn" id="19_5g8yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ln6kl"]
 texture = ExtResource("1_m24rr")
@@ -1766,6 +1767,12 @@ position = Vector2(3691, 597)
 
 [node name="Plant_Spin12" parent="." instance=ExtResource("18_ci321")]
 position = Vector2(3841, 597)
+
+[node name="HealthChangedManager3" parent="." instance=ExtResource("19_5g8yh")]
+offset_left = 3841.0
+offset_top = 597.0
+offset_right = 3881.0
+offset_bottom = 637.0
 
 [connection signal="body_entered" from="Portal_Village" to="Portal_Village" method="_on_body_entered"]
 [connection signal="body_entered" from="Portal_Dungeon" to="Portal_Dungeon" method="_on_body_entered"]
