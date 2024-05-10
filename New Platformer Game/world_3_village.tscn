@@ -8372,7 +8372,7 @@ scale = Vector2(3.6, 3.61111)
 texture = ExtResource("13_baswt")
 
 [node name="Portal_River" parent="." instance=ExtResource("15_yxs4h")]
-position = Vector2(32, 528)
+position = Vector2(-47, 529)
 
 [node name="Portal_Forest" parent="." instance=ExtResource("15_yxs4h")]
 position = Vector2(2803, 527)

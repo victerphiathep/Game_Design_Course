@@ -48,7 +48,7 @@ offset_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
-text = "Where am i....?"
+text = "Welcome to Eldritch Fields. Reach the final stage to complete the game!"
 clip_text = true
 
 [node name="End" type="Label" parent="TextboxContainer/DialoguePanel"]

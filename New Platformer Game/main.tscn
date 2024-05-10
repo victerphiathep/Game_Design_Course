@@ -9,6 +9,7 @@
 script = ExtResource("1_q2k67")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 448.0
 offset_top = 199.0
 offset_right = 681.0

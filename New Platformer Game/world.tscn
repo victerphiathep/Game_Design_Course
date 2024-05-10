@@ -27180,7 +27180,6 @@ offset_right = -5.0
 offset_bottom = 1.0
 
 [node name="InventoryGui" parent="UI" instance=ExtResource("23_h6fec")]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27194,10 +27193,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Hp" type="Label" parent="UI"]
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 48.0
-offset_bottom = 58.0
+offset_left = 13.0
+offset_top = 55.0
+offset_right = 53.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP"
@@ -27205,21 +27204,22 @@ script = SubResource("GDScript_gm8vn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Gold" type="Label" parent="UI"]
-offset_left = 8.0
-offset_top = 56.0
-offset_right = 62.0
-offset_bottom = 93.0
+offset_left = 11.0
+offset_top = 80.0
+offset_right = 65.0
+offset_bottom = 117.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Gold"
 script = SubResource("GDScript_5m36j")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+[node name="HP_Bar_Actual" type="TextureProgressBar" parent="UI"]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 72.0
 offset_bottom = 18.0
+scale = Vector2(4.21221, 4.63991)
 texture_under = ExtResource("7_t81a8")
 texture_progress = ExtResource("8_8sqqq")
 script = ExtResource("9_ryfho")
@@ -27229,10 +27229,10 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -288.0
-offset_top = 384.0
-offset_right = -24.0
-offset_bottom = 424.0
+offset_left = -277.0
+offset_top = 14.0
+offset_right = -13.0
+offset_bottom = 54.0
 grow_horizontal = 0
 script = ExtResource("6_s5nrc")
 metadata/_edit_use_anchors_ = true
@@ -27240,12 +27240,23 @@ metadata/_edit_use_anchors_ = true
 [node name="Collectables" type="Node2D" parent="."]
 script = SubResource("GDScript_woffd")
 
-[node name="Cherry" parent="Collectables" instance=ExtResource("24_krsrg")]
-position = Vector2(88, 296)
+[node name="Cherry2" parent="Collectables" instance=ExtResource("24_krsrg")]
+position = Vector2(348, 296)
+
+[node name="Cherry3" parent="Collectables" instance=ExtResource("24_krsrg")]
+position = Vector2(2173, 122)
+
+[node name="Cherry4" parent="Collectables" instance=ExtResource("24_krsrg")]
+position = Vector2(2228, -106)
+
+[node name="Cherry5" parent="Collectables" instance=ExtResource("24_krsrg")]
+position = Vector2(2665, 272)
+
+[node name="Cherry6" parent="Collectables" instance=ExtResource("24_krsrg")]
+position = Vector2(2881, -24)
 
 [node name="Timer" type="Timer" parent="Collectables"]
 wait_time = 3.026
-autostart = true
 
 [node name="Node2D" type="Node2D" parent="Collectables"]
 
@@ -27256,9 +27267,6 @@ script = ExtResource("33_wjwqv")
 [node name="Portal_Bee_House" parent="." instance=ExtResource("27_cv8w7")]
 position = Vector2(3326, 278)
 script = ExtResource("44_awjvx")
-
-[node name="TextBox" parent="." instance=ExtResource("34_7388m")]
-visible = false
 
 [node name="Second_Checkpoint" parent="." instance=ExtResource("35_0an4w")]
 position = Vector2(1999, 293)
@@ -27430,6 +27438,8 @@ position = Vector2(2140, 289)
 [node name="HealthChangedManager" parent="." instance=ExtResource("54_my72l")]
 
 [node name="HealthChangedManager4" parent="." instance=ExtResource("54_my72l")]
+
+[node name="TextBox" parent="." instance=ExtResource("34_7388m")]
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("53_cw2p7")

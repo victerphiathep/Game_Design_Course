@@ -1635,7 +1635,7 @@ scale = Vector2(1.34375, 1.31985)
 texture = ExtResource("2_y6a8s")
 
 [node name="Portal_Village" parent="." instance=ExtResource("11_pa1of")]
-position = Vector2(19, 245)
+position = Vector2(-84, 246)
 script = ExtResource("12_mf1ck")
 
 [node name="Portal_Dungeon" parent="." instance=ExtResource("11_pa1of")]
@@ -1777,6 +1777,7 @@ offset_bottom = 637.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_1posq")
+autoplay = true
 
 [connection signal="body_entered" from="Portal_Village" to="Portal_Village" method="_on_body_entered"]
 [connection signal="body_entered" from="Portal_Dungeon" to="Portal_Dungeon" method="_on_body_entered"]
